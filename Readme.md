@@ -43,7 +43,7 @@ The performance of the agents are compared by studing how well they reduce the M
 
 1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger state numbers. Infact, the STPD agent performs better than the Oracle that large states.
 
-***Issue** - Even for larger number of states the Oracles performance is comparable to TD and SPTD agents. But the paper uses the Oracles performance as the baseline, since it outperforms other agents by a hughe margin at higher number of states.I am going wrong somwehere in setting up the problem and the oracle. 
+***Issue** - Even for larger number of states the Oracles performance is comparable to TD and SPTD agents. But the paper uses the Oracles performance as the baseline, since it outperforms other agents by a hughe margin at higher number of states.I am going wrong somwehere in setting up the problem and the oracle.* 
 
 2. At smaller state numbers, the Random agent performs as well as the other agents. But as the number of states increases the Random agents performance worsens in relation to the other agents.  
 
