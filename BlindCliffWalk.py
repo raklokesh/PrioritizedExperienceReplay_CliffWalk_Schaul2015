@@ -55,14 +55,17 @@ def find_transition():
     if agent == 'R':
         return None,random.sample(transition_list,1)[0]
     elif agent == 'O':
-        transition_priorities = []
+        mse_min = 10
+        best_transition = None
         for transition in transition_list_unique:
             Q_values_test = copy.copy(Q_values)
             Q_values_test[transition[1], transition[0]] += ETA * (
                         transition[2] + GAMMA * np.max(Q_values_test[:, transition[3]]) - Q_values_test[transition[1], transition[0]])
             MSE = np.sum(abs(Q_values_test - Q_values_true) ** 2) / Q_values.size
-            transition_priorities.append(MSE)
-        return None,transition_list_unique[np.argmin(transition_priorities)]
+            if MSE<mse_min:
+                mse_min = MSE
+                best_transition = transition
+        return None,best_transition
     elif agent == 'TD':
         return None,transition_list[error_heap.return_maxTDTransition()]
     elif agent == 'SPTD':
