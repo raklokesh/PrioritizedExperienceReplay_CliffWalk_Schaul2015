@@ -4,7 +4,7 @@
 
 ## Generating the list of transitions for replay memory 
 
-All possible sequences of actions are generated and the sequences are run in a random order to obtain all possible transitions. Note that there will be repetition of the right transitions i.e. the transitions from 0th state to 1st state will be repeated N times, 1st to 2nd will be repeated N-1 times and so on. This will form our replay memory. In total, there will be (N*(N+1)/2 + N) transitions in the list.
+All possible sequences of actions are generated and the sequences are run in a random order to obtain all possible transitions. Note that there will be repetition of the right transitions i.e. the transitions from 0th state to 1st state will be repeated N times (N = number of states), 1st to 2nd will be repeated N-1 times and so on. This will form our replay memory. In total, there will be (N*(N+1)/2 + N) transitions in the list.
 
 ***Issue** - The paper states that the number of sequences of actions should be 2^N. But I could only find the one sequence of right actions and N other sequences that terminate by the wrong action and the number of transitions in the replay memory to be (N(N+1)/2 + N)*
 
@@ -41,13 +41,13 @@ Each transition has a probability of p = TD_error + epsilon of being selected i.
 ## Results
 The performance of the agents are compared by studing how well they reduce the MSE (global loss). 
 
-1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger state numbers. Infact, the STPD agent performs better than the Oracle that large states.
+1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger N. Infact, the STPD agent performs better than the Oracle that large N values.
 
-***Issue** - Even for larger number of states the Oracles performance is comparable to TD and SPTD agents. But the paper uses the Oracles performance as the baseline, since it outperforms other agents by a hughe margin at higher number of states.I am going wrong somwehere in setting up the problem and the oracle.* 
+***Issue** - Even for larger number of states the Oracles performance is comparable to TD and SPTD agents. But the paper uses the Oracles performance as the baseline, since it outperforms other agents by a hughe margin at higher N.* 
 
-2. At smaller state numbers, the Random agent performs as well as the other agents. But as the number of states increases the Random agents performance worsens in relation to the other agents.  
+2. At smaller N, the Random agent performs as well as the other agents. But as N increases the Random agents performance worsens in relation to the other agents.  
 
-3. The STPD agent gains some advantage over the TD agent as the number of states increase.
+3. The STPD agent gains some advantage over the TD agent as N increases.
 
 
 
