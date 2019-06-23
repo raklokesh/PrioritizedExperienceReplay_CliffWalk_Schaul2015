@@ -39,9 +39,9 @@ To begin with all transitions are initialized with large TD errors, so that each
 Each transition has a probability of p = TD_error + epsilon of being selected i.e. the agent chooses stochastically. The transition is selected using a sum tree structure that I created as a class scipt. Check the sum tree repository for more information.
 
 ## Results
-The performance of the agents are compared by studing how well they reduce the MSE (global loss). 
+The performance of the agents are compared based on how well they reduce the MSE (global loss). 
 
-1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger N. Infact, the STPD agent performs better than the Oracle that large N values.
+1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger N. Infact, the STPD agent performs better than the Oracle at large N values.
 
 ***Issue** - Even for larger number of states the Oracles performance is comparable to TD and SPTD agents. But the paper uses the Oracles performance as the baseline, since it outperforms other agents by a hughe margin at higher N.* 
 
