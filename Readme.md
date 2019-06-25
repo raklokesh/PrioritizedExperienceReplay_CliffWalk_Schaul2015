@@ -41,7 +41,7 @@ Each transition has a probability of p = TD_error + epsilon of being selected i.
 ## Results
 The performance of the agents are compared based on how well they reduce the MSE (global loss). The MSE was averaged over 10 episodes for each agent. For N > 500, 5 episodes was used and the oracle was dropped since the execution was too slow.
 
-![MSE plots](../master/All_MSEPlot.png)
+![MSE plots](../master/MSEPlots.png)
 
 1. The Oracle performs better than the other agents in lower state numbers but the performance difference diminshes at larger N. Infact, the STPD agent performs better than the Oracle at large N values.
 
